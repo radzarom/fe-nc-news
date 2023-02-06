@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { getAllArticles } from './utils/api';
+
+import Header from './components/Header.jsx'
+import Nav from './components/Nav.jsx'
+import ArticleCardListContainer from './components/containers/ArticleCardListContainer';
 
 function App() {
+  const [articles, setArticles] = useState([])
+
+  useEffect(() => {
+
+    getAllArticles().then((articles) => {
+      console.log(articles);
+      setArticles(articles)
+    })
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Nav/>
+      <Routes>
+        <Route path="/" element={<ArticleCardListContainer articles={articles}/>}></Route>
+      </Routes>
     </div>
   );
 }
