@@ -12,7 +12,7 @@ const CommentSection = ({ article_id }) => {
   useEffect(() => {
     getCommentsForArticle(article_id).then((comments) => {
       setComments(comments);
-      if(comments.length != 0) setNoComments(false)
+      if(comments.length !== 0) setNoComments(false)
     });
   }, []);
 
