@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getArticleByID } from "../utils/api.js";
 
+import CommentSection from './commenting/CommentSection.jsx'
+
 const Article = ({ article_id }) => {
   const [article, setArticle] = useState({});
 
@@ -18,7 +20,9 @@ const Article = ({ article_id }) => {
       <p id="article-author">{author}</p>
       <p id="article-date">{new Date(created_at).toDateString()}</p>
       <p id="article-body">{body}</p>
+      <CommentSection article_id={article_id}/>
     </article>
+    
   );
 };
 
