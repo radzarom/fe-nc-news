@@ -5,11 +5,11 @@ const ArticleCardList = ({ articles }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    if(articles.length != 0) setIsLoading(false)
+    if(articles.length !== 0) setIsLoading(false)
 
   }, [articles])
 
-  if(isLoading) return <p>loading...</p>
+  if(isLoading) return <p className="loading">loading...</p>
  
   return (
     <ul id="card-list">
@@ -18,7 +18,6 @@ const ArticleCardList = ({ articles }) => {
       })}
     </ul>
   );
-  
 };
 
 export default ArticleCardList;
