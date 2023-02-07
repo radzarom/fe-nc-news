@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;800&display=swap');
 
+/* reset */
+/* //////////////////////// */
 html {
   box-sizing: border-box;
   font-size: 16px;
   color: antiquewhite;
+  height: 100vh;
 }
 
 *, *:before, *:after {
@@ -25,38 +29,55 @@ img {
   height: auto;
 }
 
+/* Page */
+/* //////////////////////// */
 .App {
-    background-color: rgb(48, 48, 48);
+    background-color: #303030;
     height: 100%;
 }
 
+/* Header */
+/* //////////////////////// */
 header {
     height: 100px;
     background-color: #3B5CFF;
     font-family: 'Bungee', cursive;
     padding-top: 20px;
     padding-left: 20px;
-    border-bottom: 5px solid #e34815;
+    border-top: 5px solid #e34815;
 }
 
-header h1 {
-    font-size: 4rem;
-    display: inline;
-    margin-right: 15px;
-    transition: text-shadow .4s;
+  header h1 {
+      font-size: 4rem;
+      display: inline;
+      margin-right: 15px;
+      transition: text-shadow .4s;
+  }
+
+      header h1:hover {
+          text-shadow: -1px 1px 5px black;
+      }
+
+  header p {
+      display: inline;
+      font-size: 1.2rem;
+  }
+
+/* Nav */
+/* //////////////////////// */
+
+
+/* general */
+/* //////////////////////// */
+.loading {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 40px;
+  height: 100%;
 }
 
-    header h1:hover {
-        text-shadow: -1px 1px 5px black;
-    }
-
-header p {
-    display: inline;
-    font-size: 1.2rem;
-}
-
-
-
+/* ArticleCard List Page */
+/* //////////////////////// */
 #card-list {
   display: flex;
   flex-direction: row;
@@ -66,7 +87,42 @@ header p {
 .article-card {
 
   width: 200px;
-  margin: 10px
+  margin: 10px;
+  color: white;
 }
 
+
+
+
+/* Article Page */
+/* //////////////////////// */
+article {
+  padding: 20px;
+  font-family: 'Dosis', sans-serif;
+}
+
+  #article-title {
+    font-weight: 800;
+    font-size: 2rem;
+    padding-bottom: 5px;
+    border-bottom: 7px solid #e34815;
+    margin-bottom: 10px;
+  }
+
+  #article-author {
+    font-size: 1.3rem;
+    display: inline;
+  }
+
+  #article-date {
+    font-size: 1.3rem;
+    display: inline;
+    float: right;
+  }
+
+  #article-body {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    padding: 10px;
+  }
 

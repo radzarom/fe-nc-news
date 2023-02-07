@@ -6,6 +6,7 @@ import { getAllArticles } from './utils/api';
 import Header from './components/Header.jsx'
 import Nav from './components/Nav.jsx'
 import ArticleCardListContainer from './components/containers/ArticleCardListContainer';
+import ArticleContainer from './components/containers/ArticleContainer';
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -24,6 +25,7 @@ function App() {
       <Nav/>
       <Routes>
         <Route path="/" element={<ArticleCardListContainer articles={articles}/>}></Route>
+        <Route path="/articles/:article_id" element={<ArticleContainer articles={articles}/>}></Route>
       </Routes>
     </div>
   );
