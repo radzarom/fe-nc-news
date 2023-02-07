@@ -1,38 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  color: antiquewhite;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .App {
-  text-align: center;
+    background-color: rgb(48, 48, 48);
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+    height: 100px;
+    background-color: #3B5CFF;
+    font-family: 'Bungee', cursive;
+    padding-top: 20px;
+    padding-left: 20px;
+    border-bottom: 5px solid #e34815;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header h1 {
+    font-size: 4rem;
+    display: inline;
+    margin-right: 15px;
+    transition: text-shadow .4s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+    header h1:hover {
+        text-shadow: -1px 1px 5px black;
+    }
+
+header p {
+    display: inline;
+    font-size: 1.2rem;
+}
+
+
+
+#card-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.article-card {
+
+  width: 200px;
+  margin: 10px
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
