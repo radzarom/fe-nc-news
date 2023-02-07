@@ -25,7 +25,7 @@ function App() {
       <Nav/>
       <Routes>
         <Route path="/" element={<ArticleCardListContainer articles={articles}/>}></Route>
-        <Route path="/articles/:article_id" element={<ArticleContainer articles={articles}/>}></Route>
+        <Route path="/articles/:article_id" element={<ArticleContainer/>}></Route>
       </Routes>
     </div>
   );
