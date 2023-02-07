@@ -12,6 +12,9 @@ const ArticleCardList = ({ articles }) => {
       </ul>
     );
   }
+  else {
+    return <p>loading...</p>
+  }
 };
 
 export default ArticleCardList;
