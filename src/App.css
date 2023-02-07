@@ -167,3 +167,36 @@ article {
     padding: 10px;
   }
 
+
+/* Votes */
+/* ///////////////////////// */
+#vote-box {
+  height: 60px;
+  background-color: #3B5CFF;
+  display: inline-block;
+  height: auto;
+}
+
+#vote-box p {
+  font-size: 2.5rem;
+  display: inline;
+}
+
+#vote-box button{
+  font-size: 3rem;
+  display: inline-block;
+  padding: 0px 5px 5px 5px;
+  background-color: transparent;
+  border: none;
+  color: antiquewhite;
+}
+
+  #vote-box button:hover {
+
+    color:#e34815;
+  }
+
+#vote-box h3 {
+  text-align: center;
+  margin-top: 5px;
+}
