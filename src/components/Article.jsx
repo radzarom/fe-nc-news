@@ -20,7 +20,7 @@ const Article = ({ article_id }) => {
       <p id="article-author">{author}</p>
       <p id="article-date">{new Date(created_at).toDateString()}</p>
       <p id="article-body">{body}</p>
-      <Vote votes={votes}/>
+      <Vote votes={votes} article_id={article_id}/>
     </article>
   );
 };

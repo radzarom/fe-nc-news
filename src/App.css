@@ -179,20 +179,35 @@ article {
 
 #vote-box p {
   font-size: 2.5rem;
-  display: inline;
+  display:inline-block;
+  width: 50px;
+  text-align: center;
 }
 
-#vote-box button{
+.vote-unselected{
   font-size: 3rem;
   display: inline-block;
-  padding: 0px 5px 5px 5px;
+  margin: 15px;
+  margin-top: 0px;
   background-color: transparent;
   border: none;
   color: antiquewhite;
+  border: 6px solid transparent;
+}
+
+.vote-selected {
+  font-size: 3rem;
+  display: inline-block;
+  margin: 15px;
+  margin-top: 0px;
+  background-color: transparent;
+  border: none;
+  color: #e34815;
+  border: 6px solid #e34815;
+  border-radius: 50%;
 }
 
   #vote-box button:hover {
-
     color:#e34815;
   }
 

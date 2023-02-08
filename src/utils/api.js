@@ -17,7 +17,7 @@ export const getArticleByID = (article_id) => {
 }
 
 export const sendVote = (article_id, vote) => {
-  return api.patch(`/articles/${article_id}`, vote).then((res) => {
+  return api.patch(`/articles/${article_id}`, {inc_votes: vote}).then((res) => {
     return res.data.article;
   })
 }
