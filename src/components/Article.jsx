@@ -7,14 +7,20 @@ import CommentSection from './commenting/CommentSection.jsx'
 
 const Article = ({ article_id }) => {
   const [article, setArticle] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getArticleByID(article_id).then((article) => {
       setArticle(article);
+      setIsLoading(false)
     });
   }, []);
 
   const {title, author, created_at, body, votes} = article
+
+  if(isLoading) {
+    return <p className="loading">loading...</p>
+  }
 
   return (
     <article>
