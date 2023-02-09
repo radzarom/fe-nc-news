@@ -21,7 +21,7 @@ const CommentSection = ({ article_id }) => {
     return (
       <section id="comment-section">
         <h2>Comments</h2>
-        <CommentForm article_id={article_id}/>
+        <CommentForm article_id={article_id} setComments={setComments}/>
         <p>There are no comments yet.</p>
       </section>
     );
@@ -30,7 +30,7 @@ const CommentSection = ({ article_id }) => {
   return (
     <section id="comment-section">
       <h2>Comments</h2>
-      <CommentForm article_id={article_id}/>
+      <CommentForm article_id={article_id} setComments={setComments}/>
       <ul>
         {comments.map((comment) => {
           return <Comment key={comment.comment_id} comment={comment} />;

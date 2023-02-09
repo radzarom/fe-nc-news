@@ -72,6 +72,7 @@ header {
       margin-right: 15px;
       transition: text-shadow .4s;
       color: #f2f2f2;
+      text-decoration: none;
   }
 
       header h1:hover {
@@ -185,6 +186,8 @@ article {
     margin: 20px 0;
     font-size: 1.3rem;
     padding: 10px;
+    background-color: #f2f2f2b2;
+    word-wrap: break-word;
   }
 
 
@@ -222,7 +225,8 @@ article {
  padding-left: 10px;
  margin-bottom: 10px;
  font-size: 1.3rem;
- color: #ffffff
+ color: #ffffff;
+ word-wrap: break-word;
 }
 
 .comment-votes {
@@ -239,7 +243,7 @@ article {
   background-color: #366ED6;
   margin-bottom: 20px;
   padding:10px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   border-radius: 5px;
 }
 
@@ -266,8 +270,22 @@ article {
   padding: 5px;
 }
 
-#comment-form textarea:focus {
-  border: 3px solid #E63E22;
+.commentform-bad label {
+  color:black;
+  font-weight: 800;
+}
+
+.commentform-bad textarea {
+  border: 5px solid #E63E22;
+}
+
+.commentform-good label {
+  color:#14eb00;
+  font-weight: 800;
+}
+
+.commentform-good textarea {
+  border: 5px solid #14eb00;
 }
 
 #comment-form button {
@@ -309,13 +327,13 @@ article {
   margin-top: 0px;
   background-color: transparent;
   border: none;
-  color: #174396;
-  border: 6px solid #174396;
+  color: #E63E22;
+  border: 6px solid #E63E22;
   border-radius: 50%;
 }
 
   #vote-box button:hover {
-    color:#174396;
+    color:#E63E22;
   }
 
 #vote-box h3 {
