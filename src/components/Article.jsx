@@ -14,7 +14,7 @@ const Article = ({ article_id }) => {
       setArticle(article);
       setIsLoading(false)
     });
-  }, []);
+  }, [article_id]);
 
   const {title, author, created_at, body, votes} = article
 

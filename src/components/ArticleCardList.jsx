@@ -5,7 +5,7 @@ const ArticleCardList = ({ articles }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    if(articles.length !== 0) setIsLoading(false)
+    if(articles && articles.length !== 0) setIsLoading(false)
 
   }, [articles])
 

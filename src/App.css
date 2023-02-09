@@ -91,6 +91,21 @@ nav {
   height: 40px;
   background-color: #174396;
   border-top: 3px solid #E63E22;
+  text-align: center;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-family: 'Bungee', cursive;
+  color: white;
+  margin: 0 10px 0 10px;
+  display: inline-block;
+  height: 100%;
+  line-height: 35px;
+}
+
+.nav-link:hover {
+  border-bottom: 4px solid #E63E22;
 }
 
 /* general */
@@ -105,6 +120,8 @@ nav {
 .container {
   
   padding:10px;
+  display: flex;
+  flex-direction: row;
 }
 
 /* ArticleCard List Page */
@@ -113,6 +130,7 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content:space-around;
 }
 
 .article-card {
@@ -153,6 +171,22 @@ nav {
   .card-date {
     float: right;
   }
+
+/* SideBar */
+/* ///////////////////////////// */
+#sidebar {
+  background-color: #366ED6;
+  padding: 10px;
+  margin: 10px;
+  border: 3px solid #E63E22;
+  border-radius: 10px;
+}
+
+#sidebar > h2 {
+  color: #f2f2f2;
+  font-family: 'Bungee', cursive;
+  text-align: center;
+}
 
 
 /* Article Page */
@@ -236,6 +270,10 @@ article {
 .comment-date {
   display:inline;
   float:right;
+}
+
+#no-comments {
+  font-size: 2rem;
 }
 
 /* comment form */

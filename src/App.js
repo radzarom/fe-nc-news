@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { getAllArticles } from './utils/api';
+import { getTop5Articles } from './utils/api';
 
 import Header from './components/Header.jsx'
 import Nav from './components/Nav.jsx'
@@ -9,12 +9,12 @@ import ArticleCardListContainer from './components/containers/ArticleCardListCon
 import ArticleContainer from './components/containers/ArticleContainer';
 
 function App() {
-  const [articles, setArticles] = useState([])
+  const [top5, setTop5] = useState([]);
 
   useEffect(() => {
 
-    getAllArticles().then((articles) => {
-      setArticles(articles)
+    getTop5Articles().then((articles) => {
+      setTop5(articles);
     })
   }, [])
 
@@ -23,8 +23,9 @@ function App() {
       <Header/>
       <Nav/>
       <Routes>
-        <Route path="/" element={<ArticleCardListContainer articles={articles}/>}></Route>
-        <Route path="/articles/:article_id" element={<ArticleContainer/>}></Route>
+        <Route path="/" element={<ArticleCardListContainer top5={top5}/>}></Route>
+        <Route path="/articles" element={<ArticleCardListContainer top5={top5}/>}></Route>
+        <Route path="/articles/:article_id" element={<ArticleContainer top5={top5}/>}></Route>
       </Routes>
     </div>
   );
