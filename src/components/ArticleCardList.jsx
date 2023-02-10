@@ -12,11 +12,11 @@ const ArticleCardList = ({ articles }) => {
   if(isLoading) return <p className="loading">loading...</p>
  
   return (
-    <ul id="card-list">
-      {articles.map((article) => {
-        return <ArticleCard key={article.article_id} article={article} />;
-      })}
-    </ul>
+      <ul id="card-list">
+        {articles.map((article) => {
+          return <ArticleCard key={article.article_id} article={article} />;
+        })}
+      </ul>
   );
 };
 

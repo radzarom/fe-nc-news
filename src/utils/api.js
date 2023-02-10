@@ -4,8 +4,9 @@ const api = axios.create({
     baseURL:'https://news-api-wh0q.onrender.com/api'
 })
 
-export const getArticles = (topic) => {
-  return api.get('/articles', {params: {topic: topic}}).then((res) => {
+export const getArticles = (searchParams) => {
+  return api.get('/articles', {params:searchParams}).then((res) => {
+    console.log("sgagg");
     return res.data.articles;
   })
 }
