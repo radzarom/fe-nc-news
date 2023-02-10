@@ -272,6 +272,11 @@ article {
   float:right;
 }
 
+.comment-delete {
+  float: right;
+  margin-left: 10px;
+}
+
 #no-comments {
   font-size: 2rem;
 }
