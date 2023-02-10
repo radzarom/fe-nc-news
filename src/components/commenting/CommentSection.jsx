@@ -11,18 +11,22 @@ const CommentSection = ({ article_id }) => {
   
 
   useEffect(() => {
+    
+    setNoComments(true);
+    setComments([])
+
     getCommentsForArticle(article_id).then((comments) => {
       setComments(comments);
       if(comments.length !== 0) setNoComments(false)
-    });
-  }, []);
+    })
+  }, [article_id]);
 
   if (noComments) {
     return (
       <section id="comment-section">
         <h2>Comments</h2>
         <CommentForm article_id={article_id} setComments={setComments}/>
-        <p>There are no comments yet.</p>
+        <p id="no-comments">There are no comments yet.</p>
       </section>
     );
   }
