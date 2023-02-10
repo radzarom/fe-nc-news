@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getArticleByID } from "../utils/api.js";
+import { useNavigate } from "react-router-dom";
 
 import Vote from './Vote.jsx'
 import CommentSection from './commenting/CommentSection.jsx'
@@ -8,12 +9,18 @@ import CommentSection from './commenting/CommentSection.jsx'
 const Article = ({ article_id }) => {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getArticleByID(article_id).then((article) => {
       setArticle(article);
       setIsLoading(false)
-    });
+    })
+    .catch((err) => {
+      console.log(err);
+
+      navigate('/error/noarticle')
+    })
   }, [article_id]);
 
   const {title, author, created_at, body, votes} = article

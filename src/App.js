@@ -7,6 +7,7 @@ import Header from './components/Header.jsx'
 import Nav from './components/Nav.jsx'
 import ArticleCardListContainer from './components/containers/ArticleCardListContainer';
 import ArticleContainer from './components/containers/ArticleContainer';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   const [top5, setTop5] = useState([]);
@@ -27,6 +28,8 @@ function App() {
         <Route path="/" element={<ArticleCardListContainer sort={sort} setSort={setSort} top5={top5}/>}></Route>
         <Route path="/articles" element={<ArticleCardListContainer sort={sort} setSort={setSort} top5={top5}/>}></Route>
         <Route path="/articles/:article_id" element={<ArticleContainer top5={top5}/>}></Route>
+        <Route path="/error/:reason" element={<ErrorPage/>}></Route>
+        <Route path="/*" element={<ErrorPage/>}></Route>
       </Routes>
     </div>
   );
