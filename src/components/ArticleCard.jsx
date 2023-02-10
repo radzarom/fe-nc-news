@@ -8,6 +8,8 @@ const ArticleCard = ({ article }) => {
         <h2>{article.title}</h2>
         <div className="card-author-date">
           <p>{article.author}</p>
+          <p>&#9650;{article.votes}&#9660;</p>
+          <p>&#128488;{article.comment_count}</p>
           <p className="card-date">{ new Date(article.created_at).toDateString()}</p>
         </div>
       </Link>

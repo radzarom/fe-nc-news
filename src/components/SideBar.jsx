@@ -6,7 +6,7 @@ const SideBar = ({ top5 }) => {
 
   return (
     <aside id="sidebar">
-      <h2>Top 5 Most Discussed</h2>
+      <h2>Top 5 Most Voted</h2>
       <ArticleCardList articles={top5}/>
     </aside>
   );

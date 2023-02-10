@@ -10,6 +10,7 @@ import ArticleContainer from './components/containers/ArticleContainer';
 
 function App() {
   const [top5, setTop5] = useState([]);
+  const [sort, setSort] = useState({sort_by: 'created_at', order: 'desc'})
 
   useEffect(() => {
 
@@ -23,8 +24,8 @@ function App() {
       <Header/>
       <Nav/>
       <Routes>
-        <Route path="/" element={<ArticleCardListContainer top5={top5}/>}></Route>
-        <Route path="/articles" element={<ArticleCardListContainer top5={top5}/>}></Route>
+        <Route path="/" element={<ArticleCardListContainer sort={sort} setSort={setSort} top5={top5}/>}></Route>
+        <Route path="/articles" element={<ArticleCardListContainer sort={sort} setSort={setSort} top5={top5}/>}></Route>
         <Route path="/articles/:article_id" element={<ArticleContainer top5={top5}/>}></Route>
       </Routes>
     </div>
