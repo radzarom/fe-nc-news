@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
-import { postComment } from "../../utils/api";
+import { postComment, getCommentsForArticle } from "../../utils/api";
 
 const CommentForm = ({article_id, setComments}) => {
   const {user, setUser} = useContext(UserContext);
@@ -27,6 +27,9 @@ const CommentForm = ({article_id, setComments}) => {
         postComment(article_id, comment, user).then(() => {
 
           setComment('')
+          getCommentsForArticle(article_id).then((comments) => {
+            setComments(comments);
+          })
         })
         .catch(() => {
             setPrompt('could not post comment, please try again soon')
