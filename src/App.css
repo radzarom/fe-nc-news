@@ -3,14 +3,15 @@
 
 /* Color Palette */
 /*
-#366ED6  light blue - primary
-#174396  deep blue - secondary
+#343434  grey
+#212121  dark grey, near black
 
 #E63E22  vivid orange - highlight
+#4190FF light blue - highlight
 
 #f2f2f2  pale grey - background
 
-
+white or black for text, depending on contrast
 */
 
 /* reset */
@@ -50,21 +51,30 @@ img {
 
 
 .App {
-  background-color: #f2f2f2;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='%23e63e22' fill-opacity='0.2'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E");
-  
-  min-height: 100vh;
+  background-color: #343434;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='%234190ff' fill-opacity='0.35'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E"); 
+min-height: 100vh;
 }
 
 /* Header */
 /* //////////////////////// */
 header {
-    height: 100px;
-    background-color: #366ED6;
+    min-height: 100px;
+    background-color: #343434;
     font-family: 'Bungee', cursive;
     padding-top: 20px;
     padding-left: 20px;
-    border-top: 5px solid #174396;
+    padding-bottom: 10px;
+    border-top: 5px solid #4190FF;
+    display:flex;
+    flex-flow: row wrap;
+}
+
+header a {
+  display:flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  
 }
 
   header h1 {
@@ -77,21 +87,22 @@ header {
   }
 
       header h1:hover {
-          text-shadow: -1px 1px 5px black;
+          text-shadow: -1px 5px 5px black;
       }
 
   header p {
       display: inline;
       font-size: 1.2rem;
       color: #f2f2f2;
+      
   }
 
 /* Nav */
 /* //////////////////////// */
 nav {
-  height: 40px;
-  background-color: #174396;
-  border-top: 3px solid #E63E22;
+  min-height: 40px;
+  background-color: #212121;
+  border-top: 2px solid #E63E22;
   text-align: center;
 }
 
@@ -103,6 +114,7 @@ nav {
   display: inline-block;
   height: 100%;
   line-height: 35px;
+  border-bottom: 4px solid transparent;
 }
 
 .nav-link:hover {
@@ -116,12 +128,12 @@ nav {
   text-align: center;
   margin-top: 40px;
   height: 100%;
+  color: white;
 }
 
 .container {
   
   padding:10px;
-  
 }
 
 #error-page-message {
@@ -135,32 +147,54 @@ nav {
 
 /* ArticleCard List Page */
 /* //////////////////////// */
+#sort {
+  background-color: #212121;
+  display:block;
+  padding: 10px 5px;
+  margin-left: 10px;
+  width:fit-content;
+}
+
+#sort label {
+  color: white;
+  margin-left: 10px;
+}
+
 .card-sort { 
   display: inline-block;
   margin: 0px 10px;
 }
 
-#card-list {
+#content-sidebar {
+
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
+}
+
+.card-list {
+  display:flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content:space-around;
+  flex-basis: 80%;
+  
 }
 
 .article-card {
   width: 270px;
   margin:10px;
   color: #ffffff;
-  background-color: #174396;
+  background-color: #212121;
   border: 3px solid transparent;
   border-radius: 0 0 10px 10px;
   transition: 0.3s;
   font-family: 'Dosis', sans-serif;
+  box-shadow: -2px 2px 6px 0px #cfcfcf79;
 }
 
   .article-card:hover {
     border: 3px solid #E63E22;
-    box-shadow: -2px 2px 4px 2px #686868;
+    box-shadow: -2px 2px 4px 2px #9d9d9d;
   }
 
   .article-card img {
@@ -172,7 +206,8 @@ nav {
   .article-card h2 {
 
     color: white;
-    margin: 5px
+    margin: 5px;
+    
   }
 
   .article-card p {
@@ -182,8 +217,6 @@ nav {
     margin:5px;
   }
 
-
-
   .card-date {
     float: right;
   }
@@ -191,11 +224,14 @@ nav {
 /* SideBar */
 /* ///////////////////////////// */
 #sidebar {
-  background-color: #366ED6;
+  background-color: #343434;
   padding: 10px;
   margin: 10px;
   border: 3px solid #E63E22;
   border-radius: 10px;
+  flex-basis: 20%;
+  display:inline-block;
+  height: fit-content;
 }
 
 #sidebar > h2 {
@@ -204,6 +240,17 @@ nav {
   text-align: center;
 }
 
+#sidebar > .card-list {
+  width:100%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+#sidebar  .article-card {
+  width: 100%;
+  min-width: 270px;
+}
 
 /* Article Page */
 /* //////////////////////// */
@@ -216,36 +263,44 @@ article {
   #article-title {
     font-weight: 800;
     font-size: 2rem;
-    padding-bottom: 5px;
-    border-bottom: 7px solid #174396;
+    padding: 10px;
+    background-color: #212121;
+    border-bottom: 7px solid #4190FF;
+    border-radius: 10px 10px 0 0;
     margin-bottom: 10px;
+    color: white;
   }
 
   #article-author {
     font-size: 1.3rem;
     display: inline;
+    color: white;
+    font-weight: 800;
   }
 
   #article-date {
     font-size: 1.3rem;
     display: inline;
     float: right;
+    color: white;
+    font-weight: 800;
   }
 
   #article-body {
     margin: 20px 0;
     font-size: 1.3rem;
-    padding: 10px;
-    background-color: #f2f2f2b2;
+    padding: 20px 10px;
+    background-color: #212121c7;
     word-wrap: break-word;
+    color: white;
   }
 
 
 /* Comment Page */
 /* //////////////////////// */
 #comment-section {
-  background-color: #174396;
-  border: 3px solid #E63E22;
+  background-color: #212121;
+  border: 3px solid #4190FF;
   border-radius: 10px;;
   padding: 20px;
   margin-top: 20px;
@@ -254,21 +309,22 @@ article {
 
 #comment-section h2 {
   font-size: 2.5rem;
-  border-bottom: 1px solid #174396;
+  border-bottom: 1px solid #4190FF;
   margin-bottom: 20px;
 }
 
 .comment {
-  background-color: #366ED6;
+  background-color: #343434;
   padding:10px;
   margin-bottom:5px;
   color: #000000;
-  border-radius: 5px;;
+  border-radius: 5px;
 }
 
 .comment-author {
   font-size: 1.2rem;
   margin-bottom: 5px;
+  color: #ffffff;
 }
 
 .comment-body {
@@ -277,15 +333,18 @@ article {
  font-size: 1.3rem;
  color: #ffffff;
  word-wrap: break-word;
+ border-left: 1px solid white;
 }
 
 .comment-votes {
   display:inline;
+  color: #ffffff;
 }
 
 .comment-date {
   display:inline;
   float:right;
+  color: #ffffff;
 }
 
 .comment-delete {
@@ -299,7 +358,7 @@ article {
 
 /* comment form */
 #comment-form {
-  background-color: #366ED6;
+  background-color: #343434;
   margin-bottom: 20px;
   padding:10px;
   font-size: 1.3rem;
@@ -311,7 +370,7 @@ article {
 }
 
 #comment-form span {
-  color:black;
+  color:#4190FF;
   font-weight: 800;
 }
 
@@ -330,7 +389,7 @@ article {
 }
 
 .commentform-bad label {
-  color:black;
+  color:white;
   font-weight: 800;
 }
 
@@ -355,10 +414,16 @@ article {
 /* ///////////////////////// */
 #vote-box {
   height: 60px;
-  background-color: #366ED6;
+  background-color: #212121;
   display: inline-block;
   height: auto;
   border-radius: 5px;
+}
+
+#vote-box h3 {
+  text-align: center;
+  margin-top: 5px;
+  color: white;
 }
 
 #vote-box p {
@@ -366,6 +431,7 @@ article {
   display:inline-block;
   width: 50px;
   text-align: center;
+  color: white;
 }
 
 .vote-unselected{
@@ -375,7 +441,7 @@ article {
   margin-top: 0px;
   background-color: transparent;
   border: none;
-  color: black;
+  color: white;
   border: 6px solid transparent;
 }
 
@@ -395,8 +461,70 @@ article {
     color:#E63E22;
   }
 
-#vote-box h3 {
-  text-align: center;
-  margin-top: 5px;
-}
 
+
+  @media (max-width: 575.98px) {
+    #content-sidebar {
+
+      flex-direction: column;
+    }
+
+    header a {
+      flex-direction: column;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header p {
+      font-size: 0.8rem;
+    }
+
+    .nav-link{
+      font-size: 0.8rem;
+    }
+
+    #sort {
+      font-size: 0.9rem;
+      width:max-content
+    }
+    #sort label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .article-card {
+      width: 100%;
+    }
+    
+    article {
+      padding: 5px;
+    }
+
+    #article-title {
+      font-size: 1.5rem;
+    }
+
+    #article-author {
+      font-size: 1.0rem;
+    }
+
+    #article-date {
+      font-size: 1.0rem;
+    }
+
+    #article-body {
+      font-size:1rem;
+      margin:10px 0;
+    }
+
+    #comment-section {
+      margin-top: 10px;
+      padding: 10px
+    }
+
+    .comment-body {
+      font-size: 0.9rem;
+    }
+  }

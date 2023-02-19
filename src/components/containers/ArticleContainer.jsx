@@ -7,8 +7,10 @@ const ArticleContainer = ({top5}) => {
     const {article_id} = useParams();
   
     return (<main className="container">
-        <Article article_id={article_id}></Article>
-        <SideBar top5={top5}/>
+        <div id="content-sidebar">
+            <Article article_id={article_id}></Article>
+            <SideBar top5={top5}/>
+        </div>
     </main>)
 }
 

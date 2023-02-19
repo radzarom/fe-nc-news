@@ -12,7 +12,7 @@ const ArticleCardList = ({ articles }) => {
   if(isLoading) return <p className="loading">loading...</p>
  
   return (
-      <ul id="card-list">
+      <ul className="card-list">
         {articles.map((article) => {
           return <ArticleCard key={article.article_id} article={article} />;
         })}

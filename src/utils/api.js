@@ -6,7 +6,7 @@ const api = axios.create({
 
 export const getArticles = (searchParams) => {
   return api.get('/articles', {params:searchParams}).then((res) => {
-    console.log("sgagg");
+    
     return res.data.articles;
   })
 }

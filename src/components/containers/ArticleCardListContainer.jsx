@@ -26,8 +26,10 @@ const ArticleCardListContainer = ({ top5, sort, setSort }) => {
   return (
     <main className="container">
       <CardSort sort={sort} setSort={setSort}/>
-      <ArticleCardList articles={articles}/>
-      <SideBar top5={top5}/>
+      <div id="content-sidebar">
+        <ArticleCardList articles={articles}/>
+        <SideBar top5={top5}/>
+      </div>
     </main>
   );
 };
